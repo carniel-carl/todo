@@ -1,0 +1,38 @@
+@use "./index.scss" as *;
+
+.todo_form {
+  display: grid;
+  grid-template-columns: 1.5rem 1fr;
+  gap: rem(20);
+  padding-inline-start: rem(20);
+  height: 3.8rem;
+  margin-top: rem(30);
+  margin-bottom: rem(25);
+  background: var(--container-bg);
+  border-radius: 0.3rem;
+  border: 1px solid transparent;
+
+  &.error {
+    border-color: red;
+  }
+
+  @include mobile {
+    gap: rem(10);
+    margin-top: rem(25);
+    margin-bottom: rem(20);
+    height: 3rem;
+  }
+
+  .input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--clr-text-main);
+
+    &::placeholder {
+      color: var(--clr-text-subtle);
+    }
+  }
+}

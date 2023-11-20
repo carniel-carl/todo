@@ -1,0 +1,10 @@
+@use "sass:math";
+
+@function rem($pixelValue) {
+  @return math.div($pixelValue, 16) + rem;
+}
+
+@mixin alignCenter {
+  display: flex;
+  align-items: center;
+}
