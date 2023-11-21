@@ -15,14 +15,13 @@
     height: 37vh;
     background-image: url("../images/bg-desktop-light.jpg");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     position: absolute;
     inset: 0;
     z-index: -10;
 
     @include mobile {
       height: 35vh;
-      background-size: cover;
       background-position: center;
     }
 
