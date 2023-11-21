@@ -7,7 +7,7 @@ const Context = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, {
     theme: "dark",
     todos: [
-      { task: "Cook the food", completed: true },
+      { task: "Do the laundry", completed: true },
       { task: "Learn to code", completed: false },
       { task: "Take a walk", completed: false },
     ],

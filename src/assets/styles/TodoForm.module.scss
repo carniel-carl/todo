@@ -2,9 +2,8 @@
 
 .todo_form {
   display: grid;
-  grid-template-columns: 1.5rem 1fr;
-  gap: rem(20);
-  padding-inline-start: rem(20);
+  grid-template-columns: 1.5rem 1fr 3rem;
+  padding-inline: rem(20) rem(10);
   height: 3.8rem;
   margin-top: rem(30);
   margin-bottom: rem(25);
@@ -24,7 +23,7 @@
   }
 
   .input {
-    width: 100%;
+    margin-left: rem(10);
     height: 100%;
     border: none;
     outline: none;
@@ -34,5 +33,16 @@
     &::placeholder {
       color: var(--clr-text-subtle);
     }
+  }
+  .save_btn {
+    border: 1px solid var(--clr-text-subtle);
+    align-self: center;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    display: none;
+  }
+
+  &:has(.input:not(:placeholder-shown)) .save_btn {
+    display: block;
   }
 }

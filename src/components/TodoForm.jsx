@@ -52,6 +52,9 @@ const TodoForm = () => {
         placeholder="Create a new todo ..."
         {...register("task")}
       />
+      <button type="submit" className={style.save_btn}>
+        Save
+      </button>
     </form>
   );
 };
