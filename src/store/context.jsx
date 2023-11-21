@@ -22,7 +22,7 @@ const Context = ({ children }) => {
     theme: localStorage.getItem("TODO_THEME")
       ? localStorage.getItem("TODO_THEME")
       : userMode(),
-    todos: [
+    todos: JSON.parse(localStorage.getItem("TODO_TASKS")) || [
       { task: "Do the laundry", completed: true },
       { task: "Learn to code", completed: false },
       { task: "Take a walk", completed: false },
@@ -36,6 +36,11 @@ const Context = ({ children }) => {
       localStorage.setItem("TODO_THEME", state.theme);
     }
   }, [state.theme]);
+
+  // Effect to save tasks to local storage whenever tasks change
+  useEffect(() => {
+    localStorage.setItem("TODO_TASKS", JSON.stringify(state.todos));
+  }, [state.todos]);
 
   return (
     <StoreContext.Provider value={{ state, dispatch }}>
