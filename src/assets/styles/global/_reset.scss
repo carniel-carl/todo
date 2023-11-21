@@ -15,7 +15,16 @@
 
   --bg: hsl(236, 33%, 92%);
   --container-bg: hsl(0, 0%, 98%);
-  --Light-Grayish-Blue: hsl(233, 11%, 84%);
+  --shadow: hsla(232, 15%, 81%, 0.762);
+  --clr-hover: hsl(234, 16%, 38%);
+  --clr-text-subtle: hsl(236, 9%, 61%);
+  --clr-text-main: hsl(235, 19%, 35%);
+}
+
+:root[data-theme="light"] {
+  --bg: hsl(236, 33%, 92%);
+  --container-bg: hsl(0, 0%, 98%);
+  --shadow: hsla(232, 15%, 81%, 0.762);
   --clr-hover: hsl(234, 16%, 38%);
   --clr-text-subtle: hsl(236, 9%, 61%);
   --clr-text-main: hsl(235, 19%, 35%);
@@ -26,8 +35,19 @@
   --container-bg: hsl(235, 24%, 19%);
   --clr-text-main: hsl(234, 39%, 85%);
   --clr-hover: hsl(236, 33%, 92%);
-  --Dark-Grayish-Blue: hsl(234, 11%, 52%);
+  --shadow: hsla(210, 11%, 7%, 0.8);
   --clr-text-subtle: hsl(233, 14%, 35%);
+}
+
+@media (prefers-color-scheme= "dark") {
+  :root {
+    --bg: hsl(235, 21%, 11%);
+    --container-bg: hsl(235, 24%, 19%);
+    --clr-text-main: hsl(234, 39%, 85%);
+    --clr-hover: hsl(236, 33%, 92%);
+    --shadow: hsla(210, 11%, 7%, 0.8);
+    --clr-text-subtle: hsl(233, 14%, 35%);
+  }
 }
 
 body {
