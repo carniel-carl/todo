@@ -7,7 +7,7 @@ import { MdClose } from "react-icons/md";
 
 const TodoList = () => {
   // HDR: INITIALISER
-  const [filter, setFilter] = useState("");
+  const [filter, setFilter] = useState(null);
 
   const {
     state: { todos },
@@ -51,7 +51,7 @@ const TodoList = () => {
             <div className={style.todo_list__container}>
               {todos
                 ?.filter((item) => {
-                  if (filter === null || filter === "") {
+                  if (filter === null) {
                     return item;
                   }
 
@@ -83,15 +83,15 @@ const TodoList = () => {
               <div className={style.cta}>
                 <button
                   type="button"
-                  onClick={() => setFilter("")}
-                  className={filter === "" && "active"}
+                  onClick={() => setFilter(null)}
+                  className={filter === null && "active"}
                 >
                   All
                 </button>
                 <button
                   type="button"
                   onClick={() => setFilter(false)}
-                  className={filter === false && "active"}
+                  className={filter === false ? "active" : ""}
                 >
                   Active
                 </button>
@@ -113,15 +113,15 @@ const TodoList = () => {
           <div className={style.mobile_cta}>
             <button
               type="button"
-              onClick={() => setFilter("")}
-              className={filter === "" && "active"}
+              onClick={() => setFilter(null)}
+              className={filter === null && "active"}
             >
               All
             </button>
             <button
               type="button"
               onClick={() => setFilter(false)}
-              className={filter === false && "active"}
+              className={filter === false ? "active" : ""}
             >
               Active
             </button>
